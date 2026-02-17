@@ -1,0 +1,50 @@
+---
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<div class="hero">
+	<h1>{title}</h1>
+	<p>{description}</p>
+</div>
+
+<style>
+	.hero {
+		text-align: center;
+		padding: 80px 20px;
+		background: none;
+		padding-bottom: 20px;
+	}
+
+	.hero h1 {
+		font-size: 40px;
+		font-weight: 700;
+		margin-bottom: 20px;
+	}
+
+	.hero p {
+		font-size: 18px;
+		color: #bdbdbd;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	@media screen and (max-width: 768px) {
+		.hero {
+			padding: 20px 20px;
+		}
+
+		.hero h1 {
+			font-size: 32px;
+		}
+
+		.hero p {
+			font-size: 16px;
+		}
+	}
+</style>
+

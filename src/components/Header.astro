@@ -1,0 +1,53 @@
+---
+---
+
+<header>
+	<div>ApotheCary Consulting</div>
+	<nav class="nav-links">
+		<a href="#services">Services</a>
+		<a href="#team">Meet the Team</a>
+		<a href="#contact">Contact</a>
+	</nav>
+</header>
+
+<style>
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px 40px;
+		background-color: #000000;
+		color: #ffffff;
+		font-size: 20px;
+		font-weight: 700;
+	}
+
+	.nav-links a {
+		margin-left: 20px;
+		text-decoration: none;
+		color: #ffffff;
+		font-weight: 600;
+		transition: color 0.3s;
+	}
+
+	.nav-links a:hover {
+		color: #f39c12;
+	}
+
+	@media screen and (max-width: 768px) {
+		header {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.nav-links {
+			margin-top: 10px;
+		}
+
+		.nav-links a {
+			display: block;
+			margin: 5px 0;
+		}
+	}
+</style>
+

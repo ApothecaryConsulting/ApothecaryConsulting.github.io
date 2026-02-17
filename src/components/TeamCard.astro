@@ -1,0 +1,58 @@
+---
+interface Props {
+	name: string;
+	role: string;
+	description: string;
+	imageUrl: string;
+}
+
+const { name, role, description, imageUrl } = Astro.props;
+---
+
+<div class="card">
+	<img src={imageUrl} alt={`${name} - ${role}`} class="avatar">
+	<h3>{name}</h3>
+	<span>{role}</span>
+	<p>{description}</p>
+</div>
+
+<style>
+	.card {
+		background: rgba(28, 28, 30, 0.9);
+		padding: 15px;
+		border-radius: 10px;
+		text-align: center;
+		box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+		transition: transform 0.3s;
+	}
+
+	.card:hover {
+		transform: translateY(-5px);
+	}
+
+	.card h3 {
+		font-size: 20px;
+		margin-bottom: 10px;
+		color: #f39c12;
+	}
+
+	.card p {
+		font-size: 14px;
+		color: #d3d3d3;
+	}
+
+	.avatar {
+		width: 90px;
+		height: 90px;
+		border-radius: 50%;
+		object-fit: cover;
+		margin-bottom: 12px;
+	}
+
+	span {
+		display: block;
+		color: #bdbdbd;
+		margin-bottom: 10px;
+	}
+</style>
+
