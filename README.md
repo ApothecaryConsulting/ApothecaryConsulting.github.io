@@ -1,6 +1,6 @@
-# ApotheCary Consulting Website
+# Apothecary Consulting Website
 
-Official website for ApotheCary Consulting - AI & Data Solutions
+Official website for Apothecary Consulting - AI & Data Solutions
 
 ## 🚀 Tech Stack
 
@@ -128,5 +128,5 @@ The `CNAME` file in the `public/` directory configures the custom domain `apothe
 
 ## 📄 License
 
-© 2025 ApotheCary Consulting. All rights reserved.
+© 2025 Apothecary Consulting. All rights reserved.
 

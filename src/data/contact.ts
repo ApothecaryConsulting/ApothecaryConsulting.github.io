@@ -5,7 +5,7 @@ export const contactLinks = [
 	},
 	{
 		label: "LinkedIn",
-		url: "https://www.linkedin.com"
+		url: "https://www.linkedin.com/company/apothecary-consulting/"
 	},
 	{
 		label: "GitHub",
