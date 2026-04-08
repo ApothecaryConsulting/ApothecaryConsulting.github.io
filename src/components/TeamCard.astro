@@ -12,47 +12,58 @@ const { name, role, description, imageUrl } = Astro.props;
 <div class="card">
 	<img src={imageUrl} alt={`${name} - ${role}`} class="avatar">
 	<h3>{name}</h3>
-	<span>{role}</span>
+	<span class="role">{role}</span>
 	<p>{description}</p>
 </div>
 
 <style>
 	.card {
-		background: rgba(28, 28, 30, 0.9);
-		padding: 15px;
-		border-radius: 10px;
+		background: var(--bg-card);
+		padding: 28px 24px;
+		border-radius: 14px;
+		border: 1px solid var(--border);
 		text-align: center;
-		box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-		transition: transform 0.3s;
+		backdrop-filter: blur(8px);
+		transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
 	}
 
 	.card:hover {
-		transform: translateY(-5px);
-	}
-
-	.card h3 {
-		font-size: 20px;
-		margin-bottom: 10px;
-		color: #f39c12;
-	}
-
-	.card p {
-		font-size: 14px;
-		color: #d3d3d3;
+		transform: translateY(-4px);
+		border-color: var(--border-hover);
+		box-shadow: 0 8px 32px rgba(56, 189, 248, 0.1);
 	}
 
 	.avatar {
-		width: 90px;
-		height: 90px;
+		width: 88px;
+		height: 88px;
 		border-radius: 50%;
 		object-fit: cover;
-		margin-bottom: 12px;
+		margin-bottom: 16px;
+		border: 2px solid rgba(56, 189, 248, 0.3);
 	}
 
-	span {
+	h3 {
+		font-family: 'Space Grotesk', sans-serif;
+		font-size: 20px;
+		font-weight: 700;
+		margin: 0 0 6px;
+		color: var(--text-primary);
+	}
+
+	.role {
 		display: block;
-		color: #bdbdbd;
-		margin-bottom: 10px;
+		font-size: 13px;
+		font-weight: 600;
+		color: var(--accent-blue);
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		margin-bottom: 14px;
+	}
+
+	p {
+		font-size: 14px;
+		color: var(--text-muted);
+		line-height: 1.65;
+		margin: 0;
 	}
 </style>
-

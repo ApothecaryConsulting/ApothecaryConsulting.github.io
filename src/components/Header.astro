@@ -2,58 +2,126 @@
 ---
 
 <header>
-	<div><a href="/" class="logo">Apothecary Consulting</a></div>
-	<nav class="nav-links">
-		<a href="/about">About Us</a>
-		<a href="/team">Team</a>
-		<a href="/contact">Contact</a>
-	</nav>
+	<div class="header-inner">
+		<a href="/" class="logo">
+			<span class="logo-mark">A</span>
+			<span class="logo-text">Apothecary <span class="logo-accent">Consulting</span></span>
+		</a>
+		<nav class="nav-links">
+			<a href="/about">About</a>
+			<a href="/team">Team</a>
+			<a href="/contact" class="nav-cta">Contact Us</a>
+		</nav>
+	</div>
 </header>
 
 <style>
 	header {
+		position: sticky;
+		top: 0;
+		z-index: 100;
+		background: rgba(5, 11, 24, 0.85);
+		backdrop-filter: blur(16px);
+		-webkit-backdrop-filter: blur(16px);
+		border-bottom: 1px solid var(--border);
+	}
+
+	.header-inner {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 20px 40px;
-		background-color: #000000;
-		color: #ffffff;
-		font-size: 20px;
-		font-weight: 700;
+		padding: 18px 48px;
+		max-width: 1200px;
+		margin: 0 auto;
+		width: 90%;
 	}
 
 	.logo {
 		text-decoration: none;
-		color: #ffffff;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.logo-mark {
+		width: 34px;
+		height: 34px;
+		background: linear-gradient(135deg, var(--accent-blue), var(--accent-indigo));
+		color: #050b18;
+		font-family: 'Space Grotesk', sans-serif;
 		font-weight: 700;
+		font-size: 18px;
+		border-radius: 8px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+	}
+
+	.logo-text {
+		font-family: 'Space Grotesk', sans-serif;
+		font-weight: 700;
+		font-size: 18px;
+		color: var(--text-primary);
+		white-space: nowrap;
+	}
+
+	.logo-accent {
+		color: var(--accent-blue);
+	}
+
+	.nav-links {
+		display: flex;
+		align-items: center;
+		gap: 8px;
 	}
 
 	.nav-links a {
-		margin-left: 20px;
 		text-decoration: none;
-		color: #ffffff;
-		font-weight: 600;
-		transition: color 0.3s;
+		color: var(--text-muted);
+		font-weight: 500;
+		font-size: 15px;
+		padding: 8px 14px;
+		border-radius: 6px;
+		transition: color 0.2s, background 0.2s;
 	}
 
 	.nav-links a:hover {
-		color: #f39c12;
+		color: var(--text-primary);
+		background: rgba(56, 189, 248, 0.06);
+	}
+
+	.nav-links .nav-cta {
+		background: linear-gradient(135deg, var(--accent-blue), var(--accent-indigo));
+		color: #050b18;
+		font-weight: 700;
+		padding: 9px 20px;
+		border-radius: 8px;
+		box-shadow: 0 0 16px rgba(56, 189, 248, 0.2);
+		transition: opacity 0.2s, transform 0.2s;
+	}
+
+	.nav-links .nav-cta:hover {
+		opacity: 0.9;
+		transform: translateY(-1px);
+		background: linear-gradient(135deg, var(--accent-blue), var(--accent-indigo));
+		color: #050b18;
 	}
 
 	@media screen and (max-width: 768px) {
-		header {
+		.header-inner {
 			flex-direction: column;
-			text-align: center;
+			gap: 16px;
+			padding: 16px 24px;
 		}
 
 		.nav-links {
-			margin-top: 10px;
+			gap: 6px;
 		}
 
 		.nav-links a {
-			display: block;
-			margin: 5px 0;
+			font-size: 14px;
+			padding: 7px 11px;
 		}
 	}
 </style>
-

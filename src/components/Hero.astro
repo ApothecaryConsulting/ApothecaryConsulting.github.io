@@ -5,46 +5,176 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+
+// Split title to apply gradient to last word(s)
+const words = title.split(' ');
+const firstPart = words.slice(0, -2).join(' ');
+const gradientPart = words.slice(-2).join(' ');
 ---
 
-<div class="hero">
-	<h1>{title}</h1>
+<section class="hero">
+	<div class="hero-badge">Data & AI Consulting</div>
+	<h1>
+		{firstPart && <span>{firstPart} </span>}
+		<span class="gradient-text">{gradientPart}</span>
+	</h1>
 	<p>{description}</p>
-</div>
+	<div class="hero-actions">
+		<a href="/contact" class="btn-primary">Start a Project</a>
+		<a href="/about" class="btn-ghost">Learn More</a>
+	</div>
+	<div class="hero-stats">
+		<div class="stat">
+			<span class="stat-value">12+</span>
+			<span class="stat-label">Years Combined Experience</span>
+		</div>
+		<div class="stat-divider"></div>
+		<div class="stat">
+			<span class="stat-value">Fortune 500</span>
+			<span class="stat-label">Clients Served</span>
+		</div>
+		<div class="stat-divider"></div>
+		<div class="stat">
+			<span class="stat-value">$429M+</span>
+			<span class="stat-label">Government Contracts</span>
+		</div>
+	</div>
+</section>
 
 <style>
 	.hero {
 		text-align: center;
-		padding: 80px 20px;
-		background: none;
-		padding-bottom: 20px;
+		padding: 100px 20px 70px;
+		position: relative;
 	}
 
-	.hero h1 {
-		font-size: 40px;
+	.hero-badge {
+		display: inline-block;
+		padding: 6px 16px;
+		background: rgba(56, 189, 248, 0.1);
+		border: 1px solid rgba(56, 189, 248, 0.25);
+		border-radius: 100px;
+		font-size: 13px;
+		font-weight: 600;
+		color: var(--accent-blue);
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		margin-bottom: 28px;
+	}
+
+	h1 {
+		font-family: 'Space Grotesk', sans-serif;
+		font-size: clamp(40px, 6vw, 68px);
 		font-weight: 700;
-		margin-bottom: 20px;
+		line-height: 1.1;
+		margin: 0 auto 24px;
+		max-width: 900px;
+		color: var(--text-primary);
+		letter-spacing: -0.02em;
 	}
 
-	.hero p {
-		font-size: 18px;
-		color: #bdbdbd;
-		max-width: 800px;
+	.gradient-text {
+		background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-indigo) 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	p {
+		font-size: clamp(16px, 2vw, 20px);
+		color: var(--text-muted);
+		max-width: 680px;
+		margin: 0 auto 48px;
+		line-height: 1.7;
+	}
+
+	.hero-actions {
+		display: flex;
+		gap: 16px;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-bottom: 72px;
+	}
+
+	.btn-ghost {
+		display: inline-block;
+		padding: 14px 36px;
+		background: transparent;
+		color: var(--text-primary);
+		font-weight: 600;
+		font-size: 16px;
+		text-decoration: none;
+		border-radius: 8px;
+		border: 1px solid var(--border-hover);
+		transition: background 0.2s, border-color 0.2s, transform 0.2s;
+	}
+
+	.btn-ghost:hover {
+		background: rgba(56, 189, 248, 0.07);
+		border-color: var(--accent-blue);
+		transform: translateY(-2px);
+	}
+
+	.hero-stats {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 40px;
+		flex-wrap: wrap;
+		padding: 32px 40px;
+		background: rgba(10, 22, 40, 0.6);
+		border: 1px solid var(--border);
+		border-radius: 16px;
+		max-width: 760px;
 		margin: 0 auto;
+		backdrop-filter: blur(8px);
+	}
+
+	.stat {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 4px;
+	}
+
+	.stat-value {
+		font-family: 'Space Grotesk', sans-serif;
+		font-size: 26px;
+		font-weight: 700;
+		background: linear-gradient(135deg, var(--accent-blue), var(--accent-indigo));
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.stat-label {
+		font-size: 13px;
+		color: var(--text-subtle);
+		font-weight: 500;
+	}
+
+	.stat-divider {
+		width: 1px;
+		height: 40px;
+		background: var(--border);
 	}
 
 	@media screen and (max-width: 768px) {
 		.hero {
-			padding: 20px 20px;
+			padding: 60px 20px 48px;
 		}
 
-		.hero h1 {
-			font-size: 32px;
+		.hero-stats {
+			gap: 24px;
+			padding: 24px 20px;
 		}
 
-		.hero p {
-			font-size: 16px;
+		.stat-divider {
+			display: none;
+		}
+
+		.stat-value {
+			font-size: 22px;
 		}
 	}
 </style>
-

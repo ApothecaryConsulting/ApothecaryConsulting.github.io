@@ -2,14 +2,94 @@
 ---
 
 <footer>
-	&copy; 2025 Apothecary Consulting. All rights reserved.
+	<div class="footer-inner">
+		<div class="footer-brand">
+			<span class="logo-mark">A</span>
+			<span class="brand-name">Apothecary <span class="brand-accent">Consulting</span></span>
+		</div>
+		<p class="tagline">Empowering businesses with next-generation AI & data solutions.</p>
+		<div class="footer-links">
+			<a href="/about">About</a>
+			<a href="/team">Team</a>
+			<a href="/contact">Contact</a>
+		</div>
+		<p class="copyright">&copy; {new Date().getFullYear()} Apothecary Consulting. All rights reserved.</p>
+	</div>
 </footer>
 
 <style>
 	footer {
-		margin-top: 40px;
+		border-top: 1px solid var(--border);
+		margin-top: 60px;
+		padding: 48px 20px;
 		text-align: center;
-		padding: 20px;
+	}
+
+	.footer-inner {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.footer-brand {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		margin-bottom: 14px;
+	}
+
+	.logo-mark {
+		width: 30px;
+		height: 30px;
+		background: linear-gradient(135deg, var(--accent-blue), var(--accent-indigo));
+		color: #050b18;
+		font-family: 'Space Grotesk', sans-serif;
+		font-weight: 700;
+		font-size: 15px;
+		border-radius: 7px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.brand-name {
+		font-family: 'Space Grotesk', sans-serif;
+		font-weight: 700;
+		font-size: 17px;
+		color: var(--text-primary);
+	}
+
+	.brand-accent {
+		color: var(--accent-blue);
+	}
+
+	.tagline {
+		font-size: 14px;
+		color: var(--text-subtle);
+		margin: 0 0 24px;
+	}
+
+	.footer-links {
+		display: flex;
+		justify-content: center;
+		gap: 24px;
+		margin-bottom: 24px;
+	}
+
+	.footer-links a {
+		font-size: 14px;
+		color: var(--text-muted);
+		text-decoration: none;
+		transition: color 0.2s;
+	}
+
+	.footer-links a:hover {
+		color: var(--accent-blue);
+	}
+
+	.copyright {
+		font-size: 13px;
+		color: var(--text-subtle);
+		margin: 0;
 	}
 </style>
-

@@ -10,33 +10,81 @@ const { icon, title, description, tools } = Astro.props;
 ---
 
 <div class="card">
-	<h3>{icon} {title}</h3>
-	<p set:html={description + '<br><strong>Tools:</strong> ' + tools} />
+	<div class="card-icon">{icon}</div>
+	<h3>{title}</h3>
+	<p class="desc">{description}</p>
+	<div class="tools-section">
+		<span class="tools-label">Stack</span>
+		<p class="tools">{tools}</p>
+	</div>
 </div>
 
 <style>
 	.card {
-		background: rgba(28, 28, 30, 0.9);
-		padding: 15px;
-		border-radius: 10px;
-		text-align: center;
-		box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-		transition: transform 0.3s;
+		background: var(--bg-card);
+		padding: 28px 24px;
+		border-radius: 14px;
+		border: 1px solid var(--border);
+		backdrop-filter: blur(8px);
+		transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.card::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(135deg, rgba(56, 189, 248, 0.04) 0%, transparent 60%);
+		pointer-events: none;
 	}
 
 	.card:hover {
-		transform: translateY(-5px);
+		transform: translateY(-4px);
+		border-color: var(--border-hover);
+		box-shadow: 0 8px 32px rgba(56, 189, 248, 0.1);
 	}
 
-	.card h3 {
-		font-size: 20px;
-		margin-bottom: 10px;
-		color: #f39c12;
+	.card-icon {
+		font-size: 32px;
+		margin-bottom: 16px;
+		display: block;
 	}
 
-	.card p {
+	h3 {
+		font-family: 'Space Grotesk', sans-serif;
+		font-size: 19px;
+		font-weight: 700;
+		margin: 0 0 12px;
+		color: var(--text-primary);
+	}
+
+	.desc {
 		font-size: 14px;
-		color: #d3d3d3;
+		color: var(--text-muted);
+		line-height: 1.65;
+		margin: 0 0 20px;
+	}
+
+	.tools-section {
+		border-top: 1px solid var(--border);
+		padding-top: 16px;
+	}
+
+	.tools-label {
+		font-size: 11px;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--accent-blue);
+		display: block;
+		margin-bottom: 6px;
+	}
+
+	.tools {
+		font-size: 13px;
+		color: var(--text-subtle);
+		margin: 0;
+		line-height: 1.5;
 	}
 </style>
-
