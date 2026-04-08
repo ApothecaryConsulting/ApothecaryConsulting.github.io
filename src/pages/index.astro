@@ -12,8 +12,8 @@ import { services } from '../data/services';
 	<Header />
 
 	<Hero
-		title="Revolutionizing AI & Data Solutions"
-		description="Empowering businesses with next-generation AI, data engineering, and cloud technologies."
+		title="Data Engineering and AI Built for Production"
+		description="We've shipped pipelines at Uber Eats, built systems on $429M government contracts, and deployed LLM-powered applications from prototype to production. That's what we bring to your project."
 	/>
 
 	<div class="container">
@@ -47,12 +47,44 @@ import { services } from '../data/services';
 				))}
 			</div>
 		</div>
+
+		<div class="section process-section">
+			<div class="section-label">Our Approach</div>
+			<h2>How We <span class="gradient-text">Work</span></h2>
+			<p class="section-sub">We run tight, low-overhead engagements. Here's what working with us looks like.</p>
+			<div class="process-steps">
+				<div class="process-step">
+					<div class="step-number">01</div>
+					<h3>Discovery & Technical Scoping</h3>
+					<p>We start by understanding your data environment, existing stack, and the actual problem — not the one in the brief. This keeps us from building the wrong thing well.</p>
+				</div>
+				<div class="process-step">
+					<div class="step-number">02</div>
+					<h3>Architecture & Proposal</h3>
+					<p>You receive a concrete technical proposal with architecture decisions explained, trade-offs documented, and a timeline grounded in realistic estimates.</p>
+				</div>
+				<div class="process-step">
+					<div class="step-number">03</div>
+					<h3>Build & Iterate</h3>
+					<p>We ship in increments, not big bangs. You see working deliverables early and often — so feedback happens when it's still cheap to act on it.</p>
+				</div>
+				<div class="process-step">
+					<div class="step-number">04</div>
+					<h3>Handoff & Knowledge Transfer</h3>
+					<p>We document what we built and why. Your team should be able to own it after we leave. If they can't, we haven't finished the job.</p>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<Footer />
 </Layout>
 
 <style>
+	.section {
+		text-align: center;
+	}
+
 	.section-label {
 		display: inline-block;
 		padding: 5px 14px;
@@ -104,5 +136,50 @@ import { services } from '../data/services';
 		width: 100%;
 		height: 100%;
 		border-radius: 14px;
+	}
+
+	.process-steps {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 24px;
+		margin-top: 40px;
+	}
+
+	.process-step {
+		background: var(--bg-card);
+		padding: 28px 24px;
+		border-radius: 14px;
+		border: 1px solid var(--border);
+		backdrop-filter: blur(8px);
+		transition: transform 0.25s, border-color 0.25s;
+	}
+
+	.process-step:hover {
+		transform: translateY(-4px);
+		border-color: var(--border-hover);
+	}
+
+	.step-number {
+		font-family: 'Space Grotesk', sans-serif;
+		font-size: 13px;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		color: var(--accent-blue);
+		margin-bottom: 14px;
+	}
+
+	.process-step h3 {
+		font-family: 'Space Grotesk', sans-serif;
+		font-size: 17px;
+		font-weight: 700;
+		margin: 0 0 10px;
+		color: var(--text-primary);
+	}
+
+	.process-step p {
+		font-size: 14px;
+		color: var(--text-muted);
+		line-height: 1.65;
+		margin: 0;
 	}
 </style>

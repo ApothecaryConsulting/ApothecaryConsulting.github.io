@@ -11,19 +11,21 @@ import { contactLinks } from '../data/contact';
 	<div class="page-hero">
 		<div class="hero-badge">Get In Touch</div>
 		<h1>Let's <span class="gradient-text">Connect</span></h1>
-		<p>Ready to transform your data and AI capabilities? We'd love to hear from you.</p>
+		<p>Tell us what you're building or where you're stuck. We'll respond within one business day.</p>
 	</div>
 
 	<div class="container">
 		<div class="contact-section">
 			<div class="contact-intro">
 				<p>
-					Whether you're looking to build AI-powered solutions, optimize your data infrastructure,
-					or explore how machine learning can drive your business forward, our team is here to help.
+					We take on a small number of engagements at a time to maintain quality. If you have a
+					data engineering or AI project in scope — or a problem that needs scoping — reach out
+					directly. We'll schedule a no-obligation technical call to determine fit.
 				</p>
 				<p>
-					Reach out through any of the channels below and we'll get back to you promptly
-					to discuss your project needs.
+					Typical engagements range from focused pipeline builds and LLM integrations to longer-term
+					embedded partnerships. Not sure which applies? Tell us what you're trying to accomplish
+					and we'll figure it out together.
 				</p>
 			</div>
 
@@ -37,6 +39,8 @@ import { contactLinks } from '../data/contact';
 				))}
 			</div>
 
+			<p class="contact-note">Apothecary Consulting is a US-based firm. We work with clients remotely and on-site.</p>
+
 			<div class="info-section">
 				<h2>What to Expect</h2>
 				<div class="info-grid">
@@ -47,7 +51,7 @@ import { contactLinks } from '../data/contact';
 					</div>
 					<div class="info-card">
 						<div class="info-number">02</div>
-						<h3>Proposal & Planning</h3>
+						<h3>Scoped Proposal</h3>
 						<p>Receive a detailed proposal with timeline, deliverables, and transparent pricing.</p>
 					</div>
 					<div class="info-card">
@@ -57,7 +61,7 @@ import { contactLinks } from '../data/contact';
 					</div>
 					<div class="info-card">
 						<div class="info-number">04</div>
-						<h3>Support & Growth</h3>
+						<h3>Ongoing Partnership</h3>
 						<p>Ongoing support and optimization to ensure long-term success.</p>
 					</div>
 				</div>
@@ -262,6 +266,13 @@ import { contactLinks } from '../data/contact';
 		flex-wrap: wrap;
 		justify-content: center;
 		gap: 14px;
+	}
+
+	.contact-note {
+		text-align: center;
+		font-size: 14px;
+		color: var(--text-subtle);
+		margin: 0 0 56px;
 	}
 
 	@media screen and (max-width: 768px) {
