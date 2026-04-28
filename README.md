@@ -1,13 +1,13 @@
-# Apothecary Consulting Website
+# Flarze Technologies Website
 
-Official website for Apothecary Consulting - AI & Data Solutions
+Official website for Flarze Technologies - AI & Data Solutions
 
 ## 🚀 Tech Stack
 
 - **Framework**: [Astro](https://astro.build) v5.1.5
 - **Styling**: Scoped CSS with component-based architecture
 - **Deployment**: GitHub Pages via GitHub Actions
-- **Domain**: apothecaryconsulting.com
+- **Domain**: flarzetechnologies.com
 
 ## 📁 Project Structure
 
@@ -118,7 +118,7 @@ npm run build
 
 ## 🌐 Custom Domain
 
-The `CNAME` file in the `public/` directory configures the custom domain `apothecaryconsulting.com`.
+The `CNAME` file in the `public/` directory configures the custom domain `flarzetechnologies.com`.
 
 ## 📦 Dependencies
 
@@ -128,5 +128,5 @@ The `CNAME` file in the `public/` directory configures the custom domain `apothe
 
 ## 📄 License
 
-© 2025 Apothecary Consulting. All rights reserved.
+© 2025 Flarze Technologies. All rights reserved.
 
