@@ -4,7 +4,7 @@
 <header>
 	<div class="header-inner">
 		<a href="/" class="logo">
-			<span class="logo-mark">F</span>
+			<img src="/logo-favicon-circle.png" alt="Flarze Technologies logo" class="logo-mark" />
 			<span class="logo-text">Flarze <span class="logo-accent">Technologies</span></span>
 		</a>
 		<nav class="nav-links">
@@ -46,16 +46,10 @@
 	.logo-mark {
 		width: 34px;
 		height: 34px;
-		background: linear-gradient(135deg, var(--accent-blue), var(--accent-indigo));
-		color: #050b18;
-		font-family: 'Space Grotesk', sans-serif;
-		font-weight: 700;
-		font-size: 18px;
-		border-radius: 8px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		border-radius: 50%;
 		flex-shrink: 0;
+		object-fit: cover;
+		box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
 	}
 
 	.logo-text {
