@@ -9,7 +9,7 @@ export const contactLinks = [
 	},
 	{
 		label: "GitHub",
-		url: "https://github.com/FlarzeTechnologies"
+		url: "https://github.com/apothecaryconsulting"
 	}
 ];
 
