@@ -1,0 +1,282 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { naicsCodes } from '../data/naics';
+---
+
+<Layout title="NAICS Codes | Flarze Technologies">
+	<Header />
+
+	<main class="container">
+		<!-- Hero Section -->
+		<section class="hero-section">
+			<div class="logo-container">
+				<img src="/logo-favicon-circle.png" alt="Flarze Technologies Logo" class="hero-logo" />
+			</div>
+			<h1 class="page-title">NAICS Codes</h1>
+			<p class="hero-description">
+				The North American Industry Classification System (NAICS) codes that define our business operations and service capabilities. These codes represent the diverse range of industries and sectors we serve.
+			</p>
+		</section>
+
+		<!-- About NAICS Section -->
+		<section class="about-section">
+			<h2>About NAICS Codes</h2>
+			<p class="about-text">
+				The North American Industry Classification System (NAICS) is the standard used by Federal statistical agencies in classifying business establishments for the purpose of collecting, analyzing, and publishing statistical data related to the U.S. business economy.
+			</p>
+			<p class="about-text">
+				Our NAICS codes reflect the comprehensive range of services and capabilities that Flarze Technologies provides to clients across various industries and sectors. These classifications help potential clients and partners understand our areas of expertise and service offerings.
+			</p>
+		</section>
+
+		<!-- NAICS Codes Grid -->
+		<section class="codes-section">
+			<h2>Primary NAICS Codes</h2>
+			<div class="naics-grid">
+				{naicsCodes.map((naics) => (
+					<div class="naics-card">
+						<div class="code-number">{naics.code}</div>
+						<div class="code-details">
+							<div class="code-label">Category:</div>
+							<div class="code-value">{naics.category}</div>
+
+							<div class="code-label">Subcategory:</div>
+							<div class="code-value">{naics.subcategory}</div>
+
+							<div class="code-label">Description:</div>
+							<div class="code-description">{naics.description}</div>
+						</div>
+					</div>
+				))}
+			</div>
+
+			<div class="disclaimer">
+				<p>
+					We are not limited to the NAICS codes listed above. These are the codes we primarily service. However, we support any scope of work in related NAICS codes.
+				</p>
+			</div>
+		</section>
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	main {
+		min-height: calc(100vh - 200px);
+	}
+
+	/* Hero Section */
+	.hero-section {
+		text-align: center;
+		padding: 80px 0 60px;
+	}
+
+	.logo-container {
+		margin-bottom: 24px;
+	}
+
+	.hero-logo {
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		box-shadow: 0 0 32px rgba(56, 189, 248, 0.3);
+		animation: float 3s ease-in-out infinite;
+	}
+
+	@keyframes float {
+		0%, 100% {
+			transform: translateY(0px);
+		}
+		50% {
+			transform: translateY(-10px);
+		}
+	}
+
+	.page-title {
+		font-family: 'Space Grotesk', sans-serif;
+		font-size: clamp(36px, 5vw, 56px);
+		font-weight: 700;
+		margin-bottom: 24px;
+		background: linear-gradient(135deg, var(--accent-blue), var(--accent-indigo));
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.hero-description {
+		font-size: 18px;
+		line-height: 1.7;
+		color: var(--text-muted);
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	/* About Section */
+	.about-section {
+		margin: 60px 0;
+		padding: 48px;
+		background: var(--bg-card);
+		border: 1px solid var(--border);
+		border-radius: 16px;
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+	}
+
+	.about-section h2 {
+		font-family: 'Space Grotesk', sans-serif;
+		font-size: 28px;
+		font-weight: 700;
+		margin-bottom: 24px;
+		color: var(--text-primary);
+	}
+
+	.about-section h2::after {
+		content: '';
+		display: block;
+		width: 60px;
+		height: 3px;
+		background: linear-gradient(135deg, var(--accent-blue), var(--accent-indigo));
+		margin-top: 12px;
+		border-radius: 2px;
+	}
+
+	.about-text {
+		font-size: 16px;
+		line-height: 1.8;
+		color: var(--text-muted);
+		margin-bottom: 16px;
+	}
+
+	.about-text:last-child {
+		margin-bottom: 0;
+	}
+
+	/* Codes Section */
+	.codes-section {
+		margin: 60px 0 80px;
+	}
+
+	.codes-section h2 {
+		font-family: 'Space Grotesk', sans-serif;
+		font-size: 32px;
+		font-weight: 700;
+		margin-bottom: 40px;
+		text-align: center;
+		color: var(--text-primary);
+	}
+
+	.naics-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		gap: 24px;
+		margin-bottom: 48px;
+	}
+
+	.naics-card {
+		background: var(--bg-card);
+		border: 1px solid var(--border);
+		border-radius: 12px;
+		padding: 32px;
+		transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+	}
+
+	.naics-card:hover {
+		transform: translateY(-4px);
+		border-color: var(--border-hover);
+		box-shadow: 0 8px 32px rgba(56, 189, 248, 0.15);
+	}
+
+	.code-number {
+		font-family: 'Space Grotesk', sans-serif;
+		font-size: 42px;
+		font-weight: 700;
+		background: linear-gradient(135deg, var(--accent-blue), var(--accent-indigo));
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		margin-bottom: 24px;
+		letter-spacing: 2px;
+	}
+
+	.code-details {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.code-label {
+		font-size: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		color: var(--accent-cyan);
+		margin-bottom: -8px;
+	}
+
+	.code-value {
+		font-size: 14px;
+		color: var(--text-muted);
+		line-height: 1.6;
+	}
+
+	.code-description {
+		font-size: 16px;
+		font-weight: 600;
+		color: var(--text-primary);
+		line-height: 1.5;
+		margin-top: 4px;
+	}
+
+	/* Disclaimer */
+	.disclaimer {
+		background: rgba(56, 189, 248, 0.05);
+		border: 1px solid var(--border);
+		border-radius: 12px;
+		padding: 24px 32px;
+		text-align: center;
+	}
+
+	.disclaimer p {
+		font-size: 15px;
+		line-height: 1.7;
+		color: var(--text-muted);
+		margin: 0;
+	}
+
+	/* Responsive */
+	@media screen and (max-width: 768px) {
+		.hero-section {
+			padding: 60px 0 40px;
+		}
+
+		.hero-logo {
+			width: 64px;
+			height: 64px;
+		}
+
+		.about-section {
+			padding: 32px 24px;
+		}
+
+		.naics-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.naics-card {
+			padding: 24px;
+		}
+
+		.code-number {
+			font-size: 36px;
+		}
+
+		.disclaimer {
+			padding: 20px 24px;
+		}
+	}
+</style>
